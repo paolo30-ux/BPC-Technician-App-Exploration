@@ -1,0 +1,35 @@
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.notes-list__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Body / bold */
+.notes-list__date {
+  margin: 0;
+  color: var(--color-text-default);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body);
+}
+
+/* Body / regular, text-light-alt #666 → neutral-300 (DD-05) */
+.notes-list__items {
+  margin: 0;
+  padding-left: calc(var(--space-2xl) + var(--space-sm));
+  color: var(--palette-neutral-300);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.notes-list__empty {
+  margin: 0;
+  color: var(--color-text-subtext);
+  font-size: var(--font-size-body);
+}

@@ -1,0 +1,73 @@
+.badge-bpc {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-family: var(--font-family-base);
+}
+
+/* Figma "Labeled" */
+.badge-bpc--count {
+  min-width: var(--size-badge);
+  height: var(--size-badge);
+  padding: 0 var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+/* Figma "Status" / "Custom Status" */
+.badge-bpc--status {
+  min-width: var(--size-badge);
+  height: var(--size-badge);
+  padding: 0 var(--space-lg);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+/* Figma "Chip" — Semi Bold 14 in Figma (base/semibold, off the DS scale);
+   rendered with the DS Medium weight (DD-04, DD-05). */
+.badge-bpc--chip {
+  height: var(--size-button-sm);
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+.badge-bpc--count.badge-bpc--primary {
+  background: var(--color-surface-primary);
+  color: var(--color-text-on-fill);
+}
+
+.badge-bpc--status.badge-bpc--success {
+  background: var(--color-surface-success-light);
+  color: var(--color-text-success);
+}
+
+/* Figma "Status" (DS): text/status/active #56bd5b on surface/status/active #eef8ef */
+.badge-bpc--status.badge-bpc--active {
+  background: var(--color-surface-success-light);
+  color: var(--color-surface-success);
+}
+
+.badge-bpc--status.badge-bpc--neutral {
+  background: var(--color-surface-dark);
+  color: var(--palette-neutral-600); /* Figma Text/Custom/300 (DD-05) */
+}
+
+.badge-bpc--status.badge-bpc--primary {
+  background: var(--color-surface-primary-light);
+  color: var(--color-text-primary);
+}
+
+.badge-bpc--chip.badge-bpc--warning {
+  /* Figma yellow/yellow-50 on yellow/yellow-500 — low contrast, see F-09 */
+  background: var(--palette-yellow-50);
+  color: var(--palette-yellow-500);
+}

@@ -1,0 +1,153 @@
+/* Figma Dropdown: border 1, radius 6, padding 12, gap 4 */
+.appointment-progress {
+  overflow: hidden;
+  border: var(--border-width-xs) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-default);
+}
+
+.appointment-progress__toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-xl);
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.appointment-progress__toggle:hover {
+  background: var(--color-surface-light);
+}
+
+.progress-ring {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-progress-ring);
+  height: var(--size-progress-ring);
+  margin-right: var(--space-sm);
+}
+
+.progress-ring__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.progress-ring__track,
+.progress-ring__value {
+  fill: none;
+  stroke-width: 6;
+}
+
+.progress-ring__track {
+  stroke: var(--color-surface-dark);
+}
+
+.progress-ring__value {
+  stroke: var(--color-surface-primary);
+}
+
+/* Figma xsmall/semibold 11px → Caption medium (DD-05), text-light #9e9e9e */
+.progress-ring__label {
+  position: relative;
+  color: var(--color-text-placeholder);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+}
+
+.appointment-progress__text {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
+/* Body / bold */
+.appointment-progress__title {
+  color: var(--color-text-default);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body);
+}
+
+/* Caption / regular, text-light */
+.appointment-progress__subtitle {
+  color: var(--color-text-placeholder);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-body);
+}
+
+.appointment-progress__chevron {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-icon-button-outlined);
+  height: var(--size-icon-button-outlined);
+  color: var(--color-icon-default);
+  font-size: var(--size-icon-2xl);
+  transition: transform var(--duration-base) var(--easing-standard);
+}
+
+.appointment-progress__toggle[aria-expanded='true']
+  .appointment-progress__chevron {
+  transform: rotate(180deg);
+}
+
+.appointment-progress__steps {
+  margin: 0;
+  padding: 0;
+  border-top: var(--border-width-xs) solid var(--color-border-default);
+  list-style: none;
+}
+
+.appointment-progress__step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding: var(--space-xl) var(--space-xl);
+  border-bottom: var(--border-width-xs) solid var(--color-border-default);
+  color: var(--color-text-default);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body);
+}
+
+.appointment-progress__step:last-child {
+  border-bottom: 0;
+}
+
+.appointment-progress__step--locked {
+  background: var(--color-surface-light);
+  color: var(--color-text-placeholder);
+  font-weight: var(--font-weight-regular);
+}
+
+.appointment-progress__step-icon {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+}
+
+.appointment-progress__step--done .appointment-progress__step-icon {
+  color: var(--color-surface-success);
+}
+
+.appointment-progress__step--current .appointment-progress__step-icon {
+  color: var(--color-icon-primary);
+}
+
+.appointment-progress__step--locked .appointment-progress__step-icon {
+  color: var(--palette-neutral-50);
+}

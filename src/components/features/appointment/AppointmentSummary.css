@@ -1,0 +1,88 @@
+.appointment-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.appointment-summary__line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.appointment-summary__line--split {
+  justify-content: space-between;
+}
+
+.appointment-summary__line--wrap {
+  flex-wrap: wrap;
+  row-gap: var(--space-lg);
+}
+
+.appointment-summary__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.appointment-summary__icon {
+  flex: none;
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+  color: var(--color-icon-subtle);
+}
+
+/* Figma base/regular (14 / 1.5) = Body regular */
+.appointment-summary__text {
+  color: var(--color-text-default);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  overflow-wrap: anywhere;
+}
+
+.appointment-summary__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target-min);
+  margin: calc((var(--touch-target-min) - var(--font-size-body) * 1.5) / -2) 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
+.appointment-summary__phones {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-3xl);
+}
+
+.appointment-summary__phone {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.appointment-summary__link--block {
+  margin-left: 0;
+}
+
+/* Figma small/regular 12px, text-light-alt #666 → Caption, neutral-300 (DD-05) */
+.appointment-summary__caption {
+  padding-left: calc(var(--size-icon-lg) + var(--space-sm));
+  color: var(--palette-neutral-300);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-body);
+}
+
+.appointment-summary__phone:last-child .appointment-summary__caption {
+  padding-left: 0;
+}
+
+.appointment-summary__divider {
+  flex: none;
+  width: var(--border-width-xs);
+  background: var(--color-border-default);
+}

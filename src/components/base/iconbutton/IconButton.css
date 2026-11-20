@@ -1,0 +1,59 @@
+.icon-button {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: var(--border-width-xs) solid transparent;
+  background: transparent;
+  color: var(--color-icon-default);
+  font-size: var(--size-icon-2xl);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard);
+}
+
+.icon-button svg {
+  width: var(--size-icon-2xl);
+  height: var(--size-icon-2xl);
+}
+
+/* Figma "Tertiary – Base": 42px; hit area padded to 44px (DD-09). */
+.icon-button--ghost {
+  width: var(--size-button-lg);
+  height: var(--size-button-lg);
+  border-radius: var(--radius-md);
+}
+.icon-button--ghost::after {
+  content: '';
+  position: absolute;
+  inset: calc((var(--size-button-lg) - var(--touch-target-min)) / 2);
+}
+.icon-button--ghost:hover,
+.icon-button--ghost:active {
+  background: var(--color-surface-light);
+  color: var(--color-icon-default);
+}
+
+/* Figma "Icon Button": 48px, bordered, primary glyph. */
+.icon-button--outlined {
+  width: var(--size-icon-button-outlined);
+  height: var(--size-icon-button-outlined);
+  border-color: var(--color-border-default);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-default);
+  color: var(--color-icon-primary);
+}
+.icon-button--outlined:hover,
+.icon-button--outlined:active {
+  background: var(--color-surface-primary-light);
+  color: var(--color-icon-primary);
+}
+
+.icon-button:disabled,
+.icon-button[aria-disabled='true'] {
+  color: var(--color-icon-disabled);
+  background: var(--color-surface-default);
+  cursor: not-allowed;
+}

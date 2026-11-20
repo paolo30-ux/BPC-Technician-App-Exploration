@@ -1,0 +1,59 @@
+/* Figma "location": padding 16, gap 8, dashed 2px connector in Border/default-dark */
+.location-route {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin: 0;
+  padding: var(--space-2xl);
+  list-style: none;
+  background: var(--color-surface-default);
+}
+
+.location-route::before {
+  content: '';
+  position: absolute;
+  left: calc(
+    var(--space-2xl) + var(--size-icon-xl) / 2 - var(--border-width-xs)
+  );
+  top: calc(var(--space-2xl) + var(--size-icon-xl));
+  bottom: calc(var(--space-2xl) + var(--size-icon-xl));
+  border-left: var(--border-width-sm) dashed var(--color-border-strong);
+}
+
+.location-route__stop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.location-route__marker {
+  position: relative;
+  flex: none;
+  width: var(--size-icon-xl);
+  height: var(--size-icon-xl);
+}
+
+.location-route__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+/* Body / bold */
+.location-route__address {
+  color: var(--color-text-default);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body);
+  overflow-wrap: anywhere;
+}
+
+/* Caption / medium, subtext */
+.location-route__caption {
+  color: var(--color-text-subtext);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}

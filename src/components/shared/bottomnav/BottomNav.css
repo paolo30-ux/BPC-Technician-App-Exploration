@@ -1,0 +1,91 @@
+/* Figma: Mobile Navigation Bar — 5 tabs (74 × 64), pt 8, 1px top border. */
+.bottom-nav {
+  flex: none;
+  background: var(--color-surface-default);
+  border-top: var(--border-width-xs) solid var(--color-border-default);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  z-index: var(--z-nav);
+}
+
+.bottom-nav__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0;
+  padding: var(--space-lg) var(--space-xs) var(--space-lg);
+  list-style: none;
+}
+
+.bottom-nav__item {
+  display: flex;
+  justify-content: center;
+}
+
+/* .mobile-nav-tab: 64px tall, gap 4, Caption */
+.bottom-nav__link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  max-width: 74px; /* Figma tab width */
+  min-height: var(--size-nav-tab);
+  color: var(--color-text-subtext);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+}
+
+/* Tertiary – Base 32 × 32, radius sm, 20px glyph */
+.bottom-nav__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-button-base);
+  height: var(--size-button-base);
+  border-radius: var(--radius-sm);
+  color: var(--color-icon-subtle);
+  font-size: var(--size-icon-lg);
+  transition: background-color var(--duration-fast) var(--easing-standard);
+}
+
+.bottom-nav__label {
+  white-space: nowrap;
+}
+
+.bottom-nav__link--active {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.bottom-nav__link--active .bottom-nav__icon {
+  background: var(--color-surface-primary-light);
+  color: var(--color-icon-primary);
+}
+
+/* Figma "Labeled" on the Message tab: right 16, top 8 of the tab */
+.bottom-nav__badge {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-2xl);
+  min-width: var(--size-badge);
+  height: var(--size-badge);
+  padding: 0 var(--space-sm);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-primary);
+  color: var(--color-text-on-fill);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--size-badge);
+  text-align: center;
+}
+
+/* Narrow phones: labels like "Appointment" need the full tab width. */
+@media (max-width: 389px) {
+  .bottom-nav__badge {
+    right: var(--space-lg);
+  }
+}

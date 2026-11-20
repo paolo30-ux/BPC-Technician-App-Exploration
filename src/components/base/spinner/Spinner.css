@@ -1,0 +1,27 @@
+.bpc-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6xl) var(--space-2xl);
+}
+
+.bpc-spinner__circle {
+  width: var(--size-icon-xl);
+  height: var(--size-icon-xl);
+  border: var(--border-width-sm) solid var(--color-border-default);
+  border-top-color: var(--color-surface-primary);
+  border-radius: var(--radius-full);
+  animation: bpc-spin 800ms linear infinite;
+}
+
+@keyframes bpc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bpc-spinner__circle {
+    animation-duration: 2400ms;
+  }
+}

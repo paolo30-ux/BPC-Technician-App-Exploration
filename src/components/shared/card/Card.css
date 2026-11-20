@@ -1,0 +1,81 @@
+.bpc-card {
+  overflow: hidden;
+  width: 100%;
+  border: var(--border-width-xs) solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-default);
+}
+
+.bpc-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  width: 100%;
+  min-height: var(--size-header-title);
+  padding: var(--space-2xl);
+  background: var(--color-surface-default);
+}
+
+.bpc-card__header--divided {
+  border-bottom: var(--border-width-xs) solid var(--color-border-default);
+}
+
+/* Subtitle 1 / bold */
+.bpc-card__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  color: var(--color-text-default);
+  font-size: var(--font-size-subtitle-1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  text-align: left;
+}
+
+.bpc-card__action {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bpc-card__body--sm {
+  padding: var(--space-lg);
+}
+
+.bpc-card__body--md {
+  padding: var(--space-2xl);
+}
+
+/* Accordion variant */
+.bpc-card__accordion-heading {
+  margin: 0;
+  font-size: inherit;
+}
+
+.bpc-card__toggle {
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.bpc-card__toggle:hover {
+  background: var(--color-surface-light);
+}
+
+.bpc-card__chevron {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-button-lg);
+  height: var(--size-button-lg);
+  color: var(--color-icon-default);
+  font-size: var(--size-icon-2xl);
+  transition: transform var(--duration-base) var(--easing-standard);
+}
+
+.bpc-card__toggle[aria-expanded='true'] .bpc-card__chevron {
+  transform: rotate(180deg);
+}

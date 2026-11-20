@@ -1,0 +1,394 @@
+/*
+ * BPC Technician App — design tokens
+ * ---------------------------------------------------------------------------
+ * Source of truth: Figma library "BPC CRM – DS V2.0.0" (file Vg3xTJzSC89ASDPlkDiu8t),
+ * read via Figma MCP on 2026-11-20. Values below were resolved from variables
+ * bound on published components and mobile templates. See docs/design-decisions.md.
+ *
+ * Legend used in comments:
+ *   PROVISIONAL — Figma has conflicting values; the value used here is the one
+ *                 bound on published components (DD-04). Awaiting design sign-off.
+ *   UNRESOLVED  — Figma conflict or gap with no component evidence; not adopted,
+ *                 or adopted only as a documented stand-in. Needs a design decision.
+ *   APP         — Not a Figma token; an implementation token for this web app
+ *                 (documented in docs/design-decisions.md).
+ *
+ * Rule: components must use these variables. No hex literals in component CSS.
+ */
+
+:root {
+  /* =====================================================================
+   * 1. BRAND PALETTE  (Figma: Palette/<hue>/<step>)
+   * ===================================================================== */
+
+  /* Neutral */
+  --palette-neutral-0: #ffffff;
+  --palette-neutral-10: #fafafa;
+  --palette-neutral-20: #f5f5f5;
+  --palette-neutral-30: #edeeee; /* CRM colors.css uses #eeeeee — Figma wins (DD-01) */
+  --palette-neutral-40: #e0e0e0;
+  --palette-neutral-50: #c4c4c4;
+  --palette-neutral-60: #b8b8b8; /* CRM colors.css uses #8b8b8b — Figma wins (DD-01) */
+  --palette-neutral-70: #aaacac;
+  --palette-neutral-80: #9e9e9e;
+  --palette-neutral-90: #8f8f8f;
+  --palette-neutral-100: #828282;
+  --palette-neutral-200: #737373;
+  --palette-neutral-300: #666666;
+  --palette-neutral-400: #585a5a;
+  --palette-neutral-500: #4c4d4d;
+  --palette-neutral-600: #424343;
+  --palette-neutral-700: #303030;
+  --palette-neutral-800: #232424;
+  --palette-neutral-900: #161717;
+
+  /* Blue (alias: Primary / Information) */
+  --palette-blue-50: #e6f5ff;
+  --palette-blue-100: #b0dffd;
+  --palette-blue-200: #8ad0fd;
+  --palette-blue-300: #54bbfc;
+  --palette-blue-400: #33adfb;
+  --palette-blue-500: #0099fa;
+  --palette-blue-600: #008be4;
+  --palette-blue-700: #006db2;
+  --palette-blue-800: #00548a;
+  --palette-blue-900: #004069; /* Only defined in the Alias collection (Primary/900); Brand stops at 800 */
+
+  /* Green (alias: Success) */
+  --palette-green-50: #eef8ef;
+  --palette-green-100: #cbebcc;
+  --palette-green-200: #b1e1b4;
+  --palette-green-300: #8ed391;
+  --palette-green-400: #78ca7c;
+  --palette-green-500: #56bd5b;
+  --palette-green-600: #4eac53;
+  --palette-green-700: #3d8641;
+  --palette-green-800: #2f6832;
+  --palette-green-900: #244f26;
+
+  /* Yellow (alias: Warning) */
+  --palette-yellow-50: #fef8e9;
+  --palette-yellow-100: #fde8ba;
+  --palette-yellow-200: #fbdd99;
+  --palette-yellow-300: #facd6b;
+  --palette-yellow-400: #f9c34e;
+  --palette-yellow-500: #f7b422; /* Only defined in the Alias collection (Warning/500); Brand palette has no yellow/500 */
+  --palette-yellow-600: #e1a41f;
+  --palette-yellow-700: #af8018;
+  --palette-yellow-800: #886313;
+  --palette-yellow-900: #684c0e;
+
+  /* Red (alias: Danger) */
+  --palette-red-50: #fceded;
+  --palette-red-100: #f6c8c8;
+  --palette-red-200: #f2adad;
+  --palette-red-300: #ec8787;
+  --palette-red-400: #e97070;
+  --palette-red-500: #e34c4c;
+  --palette-red-600: #cf4545;
+  --palette-red-700: #a13636;
+  --palette-red-800: #7d2a2a;
+  --palette-red-900: #5f2020;
+
+  /* Orange */
+  --palette-orange-50: #fdf2ea;
+  --palette-orange-100: #f9d7bf;
+  --palette-orange-200: #f7c3a0;
+  --palette-orange-300: #f3a875;
+  --palette-orange-400: #f1975a;
+  --palette-orange-500: #ed7d31;
+  --palette-orange-600: #d8722d;
+  --palette-orange-700: #a85923;
+  --palette-orange-800: #82451b;
+  --palette-orange-900: #643515;
+
+  /* Violet (no 900 in Figma) */
+  --palette-violet-50: #f4f0fa;
+  --palette-violet-100: #dcd1f1;
+  --palette-violet-200: #cbbbea;
+  --palette-violet-300: #b39de0;
+  --palette-violet-400: #a489da;
+  --palette-violet-500: #8d6cd1;
+  --palette-violet-600: #8062be;
+  --palette-violet-700: #644d94;
+  --palette-violet-800: #4e3b73;
+
+  /* Magenta */
+  --palette-magenta-50: #fdeff6;
+  --palette-magenta-100: #f9cee3;
+  --palette-magenta-200: #f6b6d6;
+  --palette-magenta-300: #f295c3;
+  --palette-magenta-400: #ef81b7;
+  --palette-magenta-500: #eb61a5;
+  --palette-magenta-600: #d65896;
+  --palette-magenta-700: #a74575;
+  --palette-magenta-800: #81355b;
+  --palette-magenta-900: #632945;
+
+  /* Pink */
+  --palette-pink-50: #fff2f2;
+  --palette-pink-100: #fed8d5;
+  --palette-pink-200: #fec5c1;
+  --palette-pink-300: #fdaaa5;
+  --palette-pink-400: #fd9993;
+  --palette-pink-500: #fc8078;
+  --palette-pink-600: #e5746d;
+  --palette-pink-700: #b35b55;
+  --palette-pink-800: #8b4642;
+  --palette-pink-900: #6a3632;
+
+  /* Aquamarine */
+  --palette-aquamarine-50: #eefcf9;
+  --palette-aquamarine-100: #c9f6ec;
+  --palette-aquamarine-200: #aff2e3;
+  --palette-aquamarine-300: #8aecd6;
+  --palette-aquamarine-400: #73e9ce;
+  --palette-aquamarine-500: #50e3c2;
+  --palette-aquamarine-600: #49cfb1;
+  --palette-aquamarine-700: #39a18a;
+  --palette-aquamarine-800: #2c7d6b;
+  --palette-aquamarine-900: #225f51;
+
+  /* Brown */
+  --palette-brown-50: #f1eeeb;
+  --palette-brown-100: #d2cac2;
+  --palette-brown-200: #bdb0a5;
+  --palette-brown-300: #9f8c7c;
+  --palette-brown-400: #8c7662;
+  --palette-brown-500: #6f543b;
+  --palette-brown-600: #654c36;
+  --palette-brown-700: #4f3c2a;
+  --palette-brown-800: #3d2e20;
+  --palette-brown-900: #2f2319;
+
+  /* =====================================================================
+   * 2. SEMANTIC COLORS  (Figma alias names: Text/*, Surface/*, Border/*, Icons/*)
+   * Values as resolved on components (Button, Input, Mobile templates, Home).
+   * ===================================================================== */
+
+  /* Text */
+  --color-text-default: var(--palette-neutral-900); /* Text/default */
+  --color-text-subtext: var(--palette-neutral-90); /* Text/subtext */
+  --color-text-placeholder: var(--palette-neutral-80); /* Text/placeholder */
+  --color-text-disabled: var(--palette-neutral-100); /* Text/disabled */
+  --color-text-primary: var(--palette-blue-500); /* Text/primary */
+  --color-text-danger: var(--palette-red-500); /* Text/danger */
+  --color-text-success: var(
+    --palette-green-600
+  ); /* Text/Custom/700 → mapped (DD-05) */
+  --color-text-on-fill: var(--palette-neutral-0); /* Text/default-white */
+  /* UNRESOLVED: Text/body = #27272a appears on the Dimensions doc page only and is not
+   * in the BPC palette. Not adopted; body text uses --color-text-default. */
+
+  /* Surfaces */
+  --color-surface-default: var(--palette-neutral-0); /* Surface/default */
+  --color-surface-page: var(--palette-neutral-10); /* Surface/page */
+  /* UNRESOLVED: a second variable "Surface/Page/page" resolves to #ffffff on doc frames.
+   * Mobile templates use #fafafa (Surface/page), adopted here. */
+  --color-surface-light: var(--palette-neutral-20); /* Surface/default-light */
+  --color-surface-dark: var(--palette-neutral-30); /* Surface/default-dark */
+  --color-surface-disabled: var(--palette-neutral-30); /* Surface/disabled */
+  --color-surface-primary: var(--palette-blue-500); /* Surface/primary */
+  --color-surface-primary-hover: var(
+    --palette-blue-600
+  ); /* Surface/primary:hover */
+  --color-surface-primary-light: var(
+    --palette-blue-50
+  ); /* Surface/primary-light */
+  --color-surface-danger: var(--palette-red-500); /* Surface/danger */
+  --color-surface-danger-hover: var(
+    --palette-red-600
+  ); /* Surface/danger:hover */
+  --color-surface-danger-light: var(
+    --palette-red-50
+  ); /* Surface/danger-light */
+  --color-surface-success: var(--palette-green-500); /* Surface/success */
+  --color-surface-success-hover: var(
+    --palette-green-600
+  ); /* Surface/success:hover */
+  --color-surface-success-light: var(
+    --palette-green-50
+  ); /* Surface/Custom/600 → mapped (DD-05) */
+  --color-surface-warning: var(--palette-yellow-500); /* Alias Warning/500 */
+  --color-surface-warning-light: var(--palette-yellow-50);
+  --color-backdrop: rgb(
+    22 23 23 / 0.32
+  ); /* APP: sheet/modal scrim. Figma shows a grey backdrop; exact value not tokenised */
+
+  /* Borders */
+  --color-border-default: var(--palette-neutral-40); /* Border/default */
+  --color-border-strong: var(--palette-neutral-80); /* Border/default-dark */
+  --color-border-primary: var(--palette-blue-500); /* Border/primary */
+  --color-border-danger: var(--palette-red-500); /* Border/danger */
+
+  /* Icons */
+  --color-icon-default: var(--palette-neutral-800); /* Icons/default */
+  --color-icon-subtle: var(--palette-neutral-90); /* Icons/subicon */
+  --color-icon-disabled: var(--palette-neutral-100); /* Icons/disabled */
+  --color-icon-primary: var(--palette-blue-500); /* Icons/primary */
+  --color-icon-danger: var(--palette-red-500); /* Icons/danger */
+  --color-icon-on-fill: var(--palette-neutral-0); /* Icons/default-light */
+
+  /* Focus — PROVISIONAL (DD-11): Figma defines no focus state (design audit DSA-02). */
+  --color-focus-ring: var(--palette-blue-300);
+
+  /* =====================================================================
+   * 3. TYPOGRAPHY  (Figma text styles; family Inter for every role)
+   * ===================================================================== */
+  --font-family-base:
+    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+
+  --font-weight-regular: 400; /* Font/font weight/Regular */
+  --font-weight-medium: 500; /* PROVISIONAL (DD-04): docs page labels this "Semi Bold";
+                                published styles (Body/medium, Subtitle 2/medium…) are 500. */
+  --font-weight-bold: 700; /* Font/font weight/Bold */
+
+  --font-size-caption: 12px; /* Body/xs/font-size   — Caption */
+  --font-size-body: 14px; /* Body/sm/font-size   — Body */
+  --font-size-subtitle-2: 16px; /* Body/md/font-size   — Subtitle 2 */
+  --font-size-subtitle-1: 20px; /* Body/lg/font-size   — Subtitle 1 */
+  --font-size-title-2: 24px; /* Header/Title 2/font-size */
+  --font-size-title-1: 32px; /* Header/Title 1/font-size */
+  /* UNRESOLVED: "xsmall/semibold" (11px / 600) is used in the Technician file but is not
+   * part of the DS scale. Not adopted; use Caption (12px) — DD-05. */
+
+  --line-height-tight: 1.3; /* Titles, Subtitle 1 */
+  --line-height-subtitle-2: 1.3; /* PROVISIONAL (DD-04): style = 130%, docs page = 150% (DSA-03) */
+  --line-height-body: 1.5; /* Body, Caption */
+
+  --letter-spacing-title: -0.01em; /* PROVISIONAL (DD-04): variable value "-1" (unit not exposed);
+                                      docs page reads "-1.00%". Interpreted as -1%. */
+  --letter-spacing-default: 0;
+
+  /* APP: inputs render at 16px on touch devices so iOS Safari doesn't zoom (DD-09). */
+  --font-size-input-touch: 16px;
+
+  /* =====================================================================
+   * 4. SPACING  (Figma: Padding & Spacing/*)
+   * The docs page table and the variables bound on components disagree from
+   * "xl" upwards. Component-bound values are used (DD-04).
+   *   docs page:  xl 10 · 2xl 12 · 3xl 16 · 4xl 20 · 5xl 24 · 6xl 28 · 7xl 32 …
+   *   components: xl 12 · 2xl 12|16 · 3xl 24 · 4xl 32 · 6xl 48
+   * ===================================================================== */
+  --space-none: 0;
+  --space-xs: 2px;
+  --space-sm: 4px;
+  --space-md: 6px;
+  --space-lg: 8px;
+  --space-xl: 12px; /* PROVISIONAL: docs = 10, components = 12 */
+  --space-2xl: 16px; /* PROVISIONAL: resolves to 12 on Typography/Dimensions docs frames,
+                         16 on Button, Shadows, Home screen */
+  --space-3xl: 24px; /* PROVISIONAL: docs = 16, components = 24 */
+  --space-4xl: 32px; /* PROVISIONAL: docs = 20, components = 32 */
+  --space-6xl: 48px; /* PROVISIONAL: docs = 28, components = 48 */
+  /* UNRESOLVED: 5xl, 7xl–12xl and negative-sm/-md have no component evidence; not
+   * defined until design confirms which scale is authoritative. */
+
+  /* =====================================================================
+   * 5. BORDER RADIUS  (Figma: Border Radius/*)
+   *   docs page:  none 0 · xs 4 · sm 6 · md 8 · lg 12 · xl 20 · full
+   *   components: sm 4 · md 6|8 · lg 8 · 2xl 24 · full
+   * ===================================================================== */
+  --radius-none: 0;
+  --radius-sm: 4px; /* PROVISIONAL: docs = 6; Button small binds 4 */
+  --radius-md: 6px; /* PROVISIONAL: resolves to 6 on Button base / Color page, 8 on docs frames */
+  --radius-lg: 8px; /* PROVISIONAL: docs = 12; Button large / Home screen bind 8 */
+  --radius-2xl: 24px; /* Variable only (not on docs page) */
+  --radius-full: 9999px; /* Border Radius/full */
+  /* UNRESOLVED: docs "xl = 20" has no component evidence; not defined. */
+  --radius-header: 16px; /* UNRESOLVED: main-header bottom corners and bottom-sheet top
+                             corners bind a generic number variable "16px", not a
+                             Border Radius token. Added 2026-11-20 for the first screens. */
+
+  /* =====================================================================
+   * 6. BORDER WIDTHS  (Figma variables Border/xs, Border/sm)
+   * UNRESOLVED naming: docs page names these sm = 1, md = 2 (lg = 4); variables
+   * on components are Border/xs = 1, Border/sm = 2. Variable names used here.
+   * ===================================================================== */
+  --border-width-none: 0;
+  --border-width-xs: 1px;
+  --border-width-sm: 2px;
+
+  /* =====================================================================
+   * 7. SHADOWS  (Figma: Drop Shadow/default, Drop Shadow/lg — identical in CRM)
+   * ===================================================================== */
+  --shadow-color-100: rgb(0 0 0 / 0.05); /* Dropshadow/100 #0000000d */
+  --shadow-color-300: rgb(0 0 0 / 0.15); /* Dropshadow/300 #00000026 */
+  --shadow-default:
+    0 2px 4px -1px var(--shadow-color-100),
+    0 4px 6px -1px var(--shadow-color-300);
+  --shadow-lg:
+    0 4px 6px -2px var(--shadow-color-100),
+    0 10px 15px -3px var(--shadow-color-300);
+
+  /* =====================================================================
+   * 8. SIZES  (component dimensions measured in Figma)
+   * ===================================================================== */
+  --size-button-sm: 24px; /* Button size=small */
+  --size-button-base: 32px; /* Button size=base */
+  --size-button-lg: 42px; /* Button size=large */
+  --size-input: 33px; /* Input Field (without supporting text) */
+  --size-icon-sm: 14px;
+  --size-icon-md: 16px;
+  --size-icon-button: 18px; /* Icon inside Button (Clock In play, Driving Directions pin) */
+  --size-icon-lg: 20px; /* Nav tab icon, timer clock, appointment detail icons */
+  --size-icon-xl: 24px; /* Location markers, upload icon */
+  --size-icon-2xl: 28px; /* Tertiary – Base / Icon Button glyph (back, bell, chevrons) */
+  --size-icon-button-outlined: 48px; /* "Icon Button" (bordered) — Appointment prev/next */
+  --size-avatar-header: 40px;
+  --size-avatar-list: 32px; /* item-messages avatar */
+  --size-badge: 20px; /* Labeled / Status badge height */
+  --size-dot: 8px; /* Non-labeled dot (timer "clocked in" indicator) */
+  --size-progress-ring: 56px; /* Appointment progress dropdown ring */
+  --size-empty-circle: 140px; /* main-content type=empty icon circle */
+  --size-empty-icon: 48px; /* main-content type=empty glyph */
+  --size-header-title: 74px; /* main-header, title-only variant */
+  --size-bottom-nav: 80px; /* Mobile Navigation Bar without the iOS home indicator (109 − 29) */
+  --size-nav-tab: 64px; /* .mobile-nav-tab height */
+  --size-map-preview: 168px; /* location-container on Home (Next Schedule) */
+  --size-map-detail: 238px; /* location-container map on Site Verification (364 − 126 address block) */
+  --size-upload-area: 206px; /* Image Upload Instructions */
+  --size-table-row: 47px; /* .table-cell body row */
+  --size-sheet-handle-width: 50px; /* bottom-sheets Home Indicator handle */
+  --size-sheet-handle-height: 5px;
+
+  /* =====================================================================
+   * 9. TOUCH TARGETS  (APP — DD-09)
+   * Figma buttons (24/32/42) and inputs (33) are below the 44px guideline.
+   * Visual size follows Figma; the hit area is padded to at least 44px.
+   * ===================================================================== */
+  --touch-target-min: 44px;
+
+  /* =====================================================================
+   * 10. LAYOUT & BREAKPOINTS  (APP — DD-08)
+   * Figma frames are 440×956. Custom properties can't be used inside @media,
+   * so breakpoints are documented here and repeated as literals in CSS:
+   *   --bp-phone-min    360px  smallest supported width
+   *   --bp-design       440px  Figma frame width / max app column
+   *   --bp-desktop-shell 481px above this the app renders as a centred column
+   * ===================================================================== */
+  --bp-phone-min: 360px;
+  --bp-design: 440px;
+  --bp-desktop-shell: 481px;
+  --layout-max-width: 440px;
+  --layout-gutter: var(--space-2xl); /* 16px side gutter (main-content) */
+
+  /* =====================================================================
+   * 11. MOTION & LAYERS  (APP)
+   * ===================================================================== */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --z-nav: 100;
+  --z-header: 110;
+  --z-sheet: 1050;
+  --z-toast: 1100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}

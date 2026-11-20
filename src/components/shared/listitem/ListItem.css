@@ -1,0 +1,107 @@
+/* Figma item / item-messages: padding 16, bottom border */
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding: var(--space-2xl);
+  border-bottom: var(--border-width-xs) solid var(--color-border-default);
+  background: var(--color-surface-default);
+}
+
+.list-item:last-child {
+  border-bottom: 0;
+}
+
+.list-item__text {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.list-item__text p {
+  margin: 0;
+}
+
+/* Subtitle 2 / medium */
+.list-item__title {
+  overflow: hidden;
+  color: var(--color-text-default);
+  font-size: var(--font-size-subtitle-2);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-subtitle-2);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Body / medium, subtext */
+.list-item__subtext {
+  color: var(--color-text-subtext);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+.list-item__trailing {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+/* item-messages */
+.list-item--message {
+  justify-content: flex-start;
+}
+
+.list-item__avatar {
+  flex: none;
+  width: var(--size-avatar-list);
+  height: var(--size-avatar-list);
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.list-item--message .list-item__text {
+  gap: var(--space-xs);
+}
+
+/* Body / medium */
+.list-item__sender {
+  color: var(--color-text-default);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+/* Body / regular, subtext, one line */
+.list-item__preview {
+  overflow: hidden;
+  color: var(--color-text-subtext);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Caption / medium, placeholder */
+.list-item__time {
+  flex: none;
+  align-self: center;
+  color: var(--color-text-placeholder);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+}
+
+/* ETA (Caption / regular) */
+.list-item__eta {
+  color: var(--color-text-default);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+}

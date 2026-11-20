@@ -1,0 +1,7 @@
+/* Error text is not designed in Figma (P2-03); uses DS danger text. */
+.photo-sheet__error {
+  margin: var(--space-lg) 0 0;
+  color: var(--color-text-danger);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}

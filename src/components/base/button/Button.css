@@ -1,0 +1,108 @@
+/* Figma: Primary – Default / Secondary / Success / Tertiary – Default (size base | large) */
+.bpc-button {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0 var(--space-2xl);
+  border: var(--border-width-xs) solid transparent;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-subtitle-2);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-subtitle-2);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard);
+}
+
+/* DD-09: expand the hit area to 44px without changing the visual size. */
+.bpc-button::after {
+  content: '';
+  position: absolute;
+  inset: 50% 0 auto;
+  min-height: var(--touch-target-min);
+  height: 100%;
+  transform: translateY(-50%);
+}
+
+.bpc-button--lg {
+  height: var(--size-button-lg);
+}
+
+.bpc-button--base {
+  height: var(--size-button-base);
+  padding: 0 var(--space-xl);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-body);
+}
+
+.bpc-button--full {
+  display: flex;
+  width: 100%;
+}
+
+.bpc-button__icon {
+  width: var(--size-icon-button);
+  height: var(--size-icon-button);
+}
+
+.bpc-button--primary {
+  background: var(--color-surface-primary);
+  color: var(--color-text-on-fill);
+}
+.bpc-button--primary:hover,
+.bpc-button--primary:active {
+  background: var(--color-surface-primary-hover);
+  color: var(--color-text-on-fill);
+}
+
+.bpc-button--success {
+  background: var(--color-surface-success);
+  color: var(--color-text-on-fill);
+}
+.bpc-button--success:hover,
+.bpc-button--success:active {
+  background: var(--color-surface-success-hover);
+  color: var(--color-text-on-fill);
+}
+
+.bpc-button--secondary {
+  background: var(--color-surface-default);
+  border-color: var(--color-border-default);
+  color: var(--color-text-default);
+}
+.bpc-button--secondary:hover,
+.bpc-button--secondary:active {
+  background: var(--color-surface-light);
+  color: var(--color-text-default);
+}
+
+.bpc-button--tertiary {
+  background: transparent;
+  color: var(--color-text-primary);
+}
+.bpc-button--tertiary:hover,
+.bpc-button--tertiary:active {
+  background: var(--color-surface-primary-light);
+  color: var(--color-text-primary);
+}
+
+.bpc-button:disabled,
+.bpc-button[aria-disabled='true'] {
+  background: var(--color-surface-disabled);
+  border-color: transparent;
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.bpc-button--secondary:disabled {
+  background: var(--color-surface-default);
+  border-color: var(--color-border-default);
+}

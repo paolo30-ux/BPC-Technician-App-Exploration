@@ -1,0 +1,60 @@
+/* Figma .timer: border 1, radius 8, padding 12, gap 16 */
+.clock-timer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+  padding: var(--space-xl);
+  border: var(--border-width-xs) solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-default);
+}
+
+/* clock in / break: Surface/default-dark */
+.clock-timer--active {
+  background: var(--color-surface-dark);
+}
+
+.clock-timer__time {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: var(--space-lg);
+  min-width: 0;
+}
+
+.clock-timer__clock {
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+  color: var(--color-icon-default);
+}
+
+/* Non-labeled dot (blue) */
+.clock-timer__dot {
+  flex: none;
+  width: var(--size-dot);
+  height: var(--size-dot);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-primary);
+}
+
+/* Subtitle 1 / medium (regular while on break) */
+.clock-timer__value {
+  color: var(--color-text-default);
+  font-size: var(--font-size-subtitle-1);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  font-variant-numeric: tabular-nums;
+}
+
+.clock-timer__value--paused {
+  font-weight: var(--font-weight-regular);
+}
+
+.clock-timer__actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  /* Figma: 10px — bound to a raw "10px" variable, not a spacing token.
+     Snapped to --space-xl (12) per the missing-token procedure. */
+  gap: var(--space-xl);
+}

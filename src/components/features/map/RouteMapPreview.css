@@ -1,0 +1,124 @@
+/*
+ * Overlay geometry is copied from the Figma "map-indicator" group (221 × 117,
+ * centred at −3.5 / −13.1). These are asset-composition coordinates, not
+ * layout spacing, so they are kept as literals in one place.
+ */
+.route-map {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  background: var(--color-surface-page);
+  border-bottom: var(--border-width-xs) solid var(--color-border-default);
+}
+
+.route-map--preview {
+  height: var(--size-map-preview);
+}
+
+.route-map--detail {
+  height: var(--size-map-detail);
+}
+
+.route-map__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.route-map__indicator {
+  position: absolute;
+  left: calc(50% - 3.5px);
+  top: calc(50% - 13.1px);
+  width: 221px;
+  height: 116.8px;
+  transform: translate(-50%, -50%);
+}
+
+.route-map__current {
+  position: absolute;
+  left: 60.4px;
+  top: 2.4px;
+  width: 18px;
+  height: 18px;
+  transform: rotate(18.65deg);
+}
+.route-map__current img {
+  position: absolute;
+  inset: 0 -47.7% -103.26% -47.7%;
+  width: auto;
+  height: auto;
+  max-width: none;
+}
+
+.route-map__route {
+  position: absolute;
+  left: 20px;
+  top: 46.8px;
+  width: 169.5px;
+  height: 70px;
+}
+.route-map__route img {
+  position: absolute;
+  inset: 0 0 -1.43% -0.59%;
+  width: auto;
+  height: auto;
+  max-width: none;
+}
+
+/* Figma xsmall/semibold 11px → Caption medium (DD-05) */
+.route-map__travel {
+  position: absolute;
+  left: 64px;
+  top: 26.5px;
+  color: var(--color-text-default);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+}
+
+.route-map__truck {
+  position: absolute;
+  left: 5.5px;
+  top: 18.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-success);
+  color: var(--color-icon-on-fill);
+  font-size: var(--size-icon-sm);
+  transform: rotate(30deg);
+}
+.route-map__truck svg {
+  transform: rotate(105deg);
+}
+
+.route-map__pin {
+  position: absolute;
+  left: 158px;
+  top: 84px;
+  padding: var(--space-sm);
+  border: var(--border-width-sm) solid var(--color-border-danger);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-default);
+  color: var(--color-icon-danger);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+}
+
+.route-map__pin-tail {
+  position: absolute;
+  left: calc(50% - 7.5px);
+  bottom: -10px;
+  width: 13px;
+  height: 8px;
+  transform: rotate(180deg);
+}

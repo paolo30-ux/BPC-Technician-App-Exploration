@@ -1,0 +1,89 @@
+/* Figma main-header: padding 16, gap 8, bottom radius 16, Drop Shadow/default */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  min-height: var(--size-header-title);
+  padding: var(--space-2xl) var(--layout-gutter);
+  background: var(--color-surface-default);
+  border-bottom: var(--border-width-xs) solid var(--color-border-default);
+  border-radius: 0 0 var(--radius-header) var(--radius-header);
+  box-shadow: var(--shadow-default);
+}
+
+.main-header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  min-height: var(--size-button-lg);
+}
+
+.main-header__identity {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: var(--space-lg);
+  min-width: 0;
+}
+
+.main-header__titles {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Title 2 / bold */
+.main-header__title {
+  overflow: hidden;
+  margin: 0;
+  color: var(--color-text-default);
+  font-size: var(--font-size-title-2);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-title);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Subtitle 2 / medium */
+.main-header__subtitle {
+  margin: 0;
+  color: var(--color-text-subtext);
+  font-size: var(--font-size-subtitle-2);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-subtitle-2);
+}
+
+.main-header__actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.main-header__avatar {
+  flex: none;
+  display: block;
+  width: var(--size-avatar-header);
+  height: var(--size-avatar-header);
+  border-radius: var(--radius-full);
+  background: var(--palette-neutral-30);
+  overflow: hidden;
+}
+
+.main-header__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Count badge on the bell (Figma: left 34, top −8 on a 42px button) */
+.main-header__bell-badge {
+  position: absolute;
+  top: calc(var(--space-lg) * -1);
+  left: calc(var(--size-button-lg) - var(--space-lg));
+}

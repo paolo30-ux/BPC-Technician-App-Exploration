@@ -1,0 +1,43 @@
+.empty-state {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  min-height: 60vh;
+  padding: var(--space-3xl) var(--layout-gutter);
+  text-align: center;
+}
+
+/* Figma: 140px circle, Surface/default-dark, 48px glyph in Icons/subicon */
+.empty-state__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-empty-circle);
+  height: var(--size-empty-circle);
+  margin-bottom: var(--space-2xl);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-dark);
+  color: var(--color-icon-subtle);
+  font-size: var(--size-empty-icon);
+}
+
+/* Subtitle 1 / regular */
+.empty-state__title {
+  margin: 0;
+  color: var(--color-text-default);
+  font-size: var(--font-size-subtitle-1);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-tight);
+}
+
+/* Caption / regular, subtext */
+.empty-state__description {
+  max-width: 30ch;
+  margin: 0;
+  color: var(--color-text-subtext);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-body);
+}
